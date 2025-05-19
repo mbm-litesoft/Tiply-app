@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		828E56E82DDB2D5200B9B9CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 828E56CE2DDB2D5000B9B9CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 828E56D52DDB2D5000B9B9CB;
+			remoteInfo = "Tiply-app";
+		};
+		828E56F22DDB2D5300B9B9CB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 828E56CE2DDB2D5000B9B9CB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 828E56D52DDB2D5000B9B9CB;
+			remoteInfo = "Tiply-app";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		828E56D62DDB2D5000B9B9CB /* Tiply-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tiply-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		828E56E72DDB2D5200B9B9CB /* Tiply-appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tiply-appTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		828E56F12DDB2D5300B9B9CB /* Tiply-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tiply-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		828E56F92DDB2D5300B9B9CB /* Exceptions for "Tiply-app" folder in "Tiply-app" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 828E56D52DDB2D5000B9B9CB /* Tiply-app */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		828E56D82DDB2D5000B9B9CB /* Tiply-app */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				828E56F92DDB2D5300B9B9CB /* Exceptions for "Tiply-app" folder in "Tiply-app" target */,
+			);
+			path = "Tiply-app";
+			sourceTree = "<group>";
+		};
+		828E56EA2DDB2D5200B9B9CB /* Tiply-appTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Tiply-appTests";
+			sourceTree = "<group>";
+		};
+		828E56F42DDB2D5300B9B9CB /* Tiply-appUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Tiply-appUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		828E56D32DDB2D5000B9B9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828E56E42DDB2D5200B9B9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828E56EE2DDB2D5300B9B9CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		828E56CD2DDB2D5000B9B9CB = {
+			isa = PBXGroup;
+			children = (
+				828E56D82DDB2D5000B9B9CB /* Tiply-app */,
+				828E56EA2DDB2D5200B9B9CB /* Tiply-appTests */,
+				828E56F42DDB2D5300B9B9CB /* Tiply-appUITests */,
+				828E56D72DDB2D5000B9B9CB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		828E56D72DDB2D5000B9B9CB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				828E56D62DDB2D5000B9B9CB /* Tiply-app.app */,
+				828E56E72DDB2D5200B9B9CB /* Tiply-appTests.xctest */,
+				828E56F12DDB2D5300B9B9CB /* Tiply-appUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		828E56D52DDB2D5000B9B9CB /* Tiply-app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828E56FA2DDB2D5300B9B9CB /* Build configuration list for PBXNativeTarget "Tiply-app" */;
+			buildPhases = (
+				828E56D22DDB2D5000B9B9CB /* Sources */,
+				828E56D32DDB2D5000B9B9CB /* Frameworks */,
+				828E56D42DDB2D5000B9B9CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				828E56D82DDB2D5000B9B9CB /* Tiply-app */,
+			);
+			name = "Tiply-app";
+			packageProductDependencies = (
+			);
+			productName = "Tiply-app";
+			productReference = 828E56D62DDB2D5000B9B9CB /* Tiply-app.app */;
+			productType = "com.apple.product-type.application";
+		};
+		828E56E62DDB2D5200B9B9CB /* Tiply-appTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828E56FF2DDB2D5300B9B9CB /* Build configuration list for PBXNativeTarget "Tiply-appTests" */;
+			buildPhases = (
+				828E56E32DDB2D5200B9B9CB /* Sources */,
+				828E56E42DDB2D5200B9B9CB /* Frameworks */,
+				828E56E52DDB2D5200B9B9CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				828E56E92DDB2D5200B9B9CB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				828E56EA2DDB2D5200B9B9CB /* Tiply-appTests */,
+			);
+			name = "Tiply-appTests";
+			packageProductDependencies = (
+			);
+			productName = "Tiply-appTests";
+			productReference = 828E56E72DDB2D5200B9B9CB /* Tiply-appTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		828E56F02DDB2D5300B9B9CB /* Tiply-appUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 828E57022DDB2D5300B9B9CB /* Build configuration list for PBXNativeTarget "Tiply-appUITests" */;
+			buildPhases = (
+				828E56ED2DDB2D5300B9B9CB /* Sources */,
+				828E56EE2DDB2D5300B9B9CB /* Frameworks */,
+				828E56EF2DDB2D5300B9B9CB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				828E56F32DDB2D5300B9B9CB /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				828E56F42DDB2D5300B9B9CB /* Tiply-appUITests */,
+			);
+			name = "Tiply-appUITests";
+			packageProductDependencies = (
+			);
+			productName = "Tiply-appUITests";
+			productReference = 828E56F12DDB2D5300B9B9CB /* Tiply-appUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		828E56CE2DDB2D5000B9B9CB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1630;
+				LastUpgradeCheck = 1630;
+				TargetAttributes = {
+					828E56D52DDB2D5000B9B9CB = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					828E56E62DDB2D5200B9B9CB = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 828E56D52DDB2D5000B9B9CB;
+					};
+					828E56F02DDB2D5300B9B9CB = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = 828E56D52DDB2D5000B9B9CB;
+					};
+				};
+			};
+			buildConfigurationList = 828E56D12DDB2D5000B9B9CB /* Build configuration list for PBXProject "Tiply-app" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 828E56CD2DDB2D5000B9B9CB;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 828E56D72DDB2D5000B9B9CB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				828E56D52DDB2D5000B9B9CB /* Tiply-app */,
+				828E56E62DDB2D5200B9B9CB /* Tiply-appTests */,
+				828E56F02DDB2D5300B9B9CB /* Tiply-appUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		828E56D42DDB2D5000B9B9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828E56E52DDB2D5200B9B9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828E56EF2DDB2D5300B9B9CB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		828E56D22DDB2D5000B9B9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828E56E32DDB2D5200B9B9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		828E56ED2DDB2D5300B9B9CB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		828E56E92DDB2D5200B9B9CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 828E56D52DDB2D5000B9B9CB /* Tiply-app */;
+			targetProxy = 828E56E82DDB2D5200B9B9CB /* PBXContainerItemProxy */;
+		};
+		828E56F32DDB2D5300B9B9CB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 828E56D52DDB2D5000B9B9CB /* Tiply-app */;
+			targetProxy = 828E56F22DDB2D5300B9B9CB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		828E56FB2DDB2D5300B9B9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Tiply-app/Tiply_app.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UM6526K888;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tiply-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mohsen.Tiply-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		828E56FC2DDB2D5300B9B9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Tiply-app/Tiply_app.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UM6526K888;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Tiply-app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mohsen.Tiply-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		828E56FD2DDB2D5300B9B9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = UM6526K888;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		828E56FE2DDB2D5300B9B9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = UM6526K888;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		828E57002DDB2D5300B9B9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UM6526K888;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mohsen.Tiply-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tiply-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tiply-app";
+			};
+			name = Debug;
+		};
+		828E57012DDB2D5300B9B9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UM6526K888;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mohsen.Tiply-appTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tiply-app.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Tiply-app";
+			};
+			name = Release;
+		};
+		828E57032DDB2D5300B9B9CB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UM6526K888;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mohsen.Tiply-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tiply-app";
+			};
+			name = Debug;
+		};
+		828E57042DDB2D5300B9B9CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UM6526K888;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Mohsen.Tiply-appUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Tiply-app";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		828E56D12DDB2D5000B9B9CB /* Build configuration list for PBXProject "Tiply-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828E56FD2DDB2D5300B9B9CB /* Debug */,
+				828E56FE2DDB2D5300B9B9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828E56FA2DDB2D5300B9B9CB /* Build configuration list for PBXNativeTarget "Tiply-app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828E56FB2DDB2D5300B9B9CB /* Debug */,
+				828E56FC2DDB2D5300B9B9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828E56FF2DDB2D5300B9B9CB /* Build configuration list for PBXNativeTarget "Tiply-appTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828E57002DDB2D5300B9B9CB /* Debug */,
+				828E57012DDB2D5300B9B9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		828E57022DDB2D5300B9B9CB /* Build configuration list for PBXNativeTarget "Tiply-appUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				828E57032DDB2D5300B9B9CB /* Debug */,
+				828E57042DDB2D5300B9B9CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 828E56CE2DDB2D5000B9B9CB /* Project object */;
+}

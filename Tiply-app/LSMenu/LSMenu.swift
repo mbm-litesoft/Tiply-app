@@ -8,98 +8,18 @@
 import SwiftUI
 
 
-public struct LSPagination: View {
+public struct LSMenu: View {
 
-    public var count = 100
- @State public var id = 1
     public var body: some View {
-        HStack{
-            
-            Image("Arrow")
-            Text("Page précédente")
-            Spacer()
-            HStack(){
-                
-                if count > 7 {
-                    
-                    ForEach(1...3, id: \.self){ number in
-                        Spacer()
-                        Text("\(number)")
-                            .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
-                            .background{
-                                if id == number {
-                                    Circle()
-                                        .fill(Color(LSColors().LSColorsPrimaryBlue))
-                                        .frame(width: 20, height: 20)
-                                       
-                                }
-                            }
-                            .onTapGesture {
-                                id = number
-                            }
-                        Spacer()
-                    }
-                    Spacer()
-                    Text("...")
-                        .foregroundStyle(Color(LSColors().LSColorsPrimaryBlue))
-                    Spacer()
-                    ForEach((count - 2)...count, id: \.self){ number in
-                        Spacer()
-                        Text("\(number)")
-                            .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
-                            .background{
-                                if id == number {
-                                    Circle()
-                                        .fill(Color(LSColors().LSColorsPrimaryBlue))
-                                        .frame(width: 20, height: 20)
-                                       
-                                }
-                            }
-                            .onTapGesture {
-                                print(number,"nm")
-                                id = number
-                            }
-                        Spacer()
-                    }
-                }else{
-                    
-                    ForEach(1...count, id: \.self){ number in
-                        Spacer()
-                        Text("\(number)")
-                            .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
-                            .background{
-                                if id == number {
-                                    Circle()
-                                        .fill(
-                                            Color(
-                                                LSColors().LSColorsPrimaryBlue
-                                            )
-                                        )
-                                        .frame(width: 20, height: 20)
-                                       
-                                }
-                            }
-                            .onTapGesture {
-                                id = number
-                            }
-                        Spacer()
-                    }
+      
+        VStack{
+            ForEach(1...3, id: .\self){ _ in
+                HStack(){
+                    Text("Lorem ipsum")
+                    Text("Lorm ipsum dolor sit amet")
                 }
             }
-           
-            Spacer()
-            Text("Page suivante")
-            Image("Arrow")
-                .rotationEffect(Angle(degrees: 180))
         }
-        .padding(.horizontal, 30)
-        .font(
-            .custom(
-                "Poppins-SemiBold",
-                size: 7,
-                relativeTo: .title2
-            )
-        )
     }
     
 }
@@ -108,6 +28,6 @@ public struct LSPagination: View {
 
 
 #Preview {
-    LSPagination()
+    LSMenu()
         .modelContainer(for: Item.self, inMemory: true)
 }

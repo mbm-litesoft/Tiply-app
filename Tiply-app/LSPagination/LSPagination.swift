@@ -11,7 +11,7 @@ import SwiftUI
 public struct LSPagination: View {
 
     public var count = 100
- @State public var ik = 1
+ @State public var id = 1
     public var body: some View {
         HStack{
             
@@ -25,9 +25,9 @@ public struct LSPagination: View {
                     ForEach(1...3, id: \.self){ number in
                         Spacer()
                         Text("\(number)")
-                            .foregroundStyle(ik == number ? .white : Color())
+                            .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
                             .background{
-                                if ik == number {
+                                if id == number {
                                     Circle()
                                         .fill(Color(LSColors().LSColorsPrimaryBlue))
                                         .frame(width: 20, height: 20)
@@ -35,16 +35,20 @@ public struct LSPagination: View {
                                 }
                             }
                             .onTapGesture {
-                                ik = number
+                                id = number
                             }
                         Spacer()
                     }
+                    Spacer()
                     Text("...")
+                        .foregroundStyle(Color(LSColors().LSColorsPrimaryBlue))
+                    Spacer()
                     ForEach((count - 2)...count, id: \.self){ number in
                         Spacer()
                         Text("\(number)")
+                            .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
                             .background{
-                                if ik == number {
+                                if id == number {
                                     Circle()
                                         .fill(Color(LSColors().LSColorsPrimaryBlue))
                                         .frame(width: 20, height: 20)
@@ -53,7 +57,7 @@ public struct LSPagination: View {
                             }
                             .onTapGesture {
                                 print(number,"nm")
-                                ik = number
+                                id = number
                             }
                         Spacer()
                     }
@@ -62,8 +66,9 @@ public struct LSPagination: View {
                     ForEach(1...count, id: \.self){ number in
                         Spacer()
                         Text("\(number)")
+                            .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
                             .background{
-                                if ik == number {
+                                if id == number {
                                     Circle()
                                         .fill(
                                             Color(
@@ -75,18 +80,19 @@ public struct LSPagination: View {
                                 }
                             }
                             .onTapGesture {
-                                ik = number
+                                id = number
                             }
                         Spacer()
                     }
                 }
             }
-            .foregroundStyle(Color(LSColors().LSColorsPrimaryBlue))
+           
             Spacer()
             Text("Page suivante")
             Image("Arrow")
                 .rotationEffect(Angle(degrees: 180))
         }
+        .padding(.horizontal, 30)
         .font(
             .custom(
                 "Poppins-SemiBold",

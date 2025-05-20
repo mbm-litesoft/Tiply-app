@@ -7,25 +7,66 @@
 
 import SwiftUI
 
-
 public struct LSMenu: View {
 
     public var body: some View {
-      
-        VStack{
-            ForEach(1...3, id: .\self){ _ in
-                HStack(){
+
+        VStack {
+            ForEach(1...3, id: \.self) { number in
+                
+                    Rectangle()
+                    .fill(number == 1 ? .clear : .gray)
+                        .frame(height: 1)
+                        .padding(.horizontal)
+                        .offset(y: 3)
+                
+                HStack {
                     Text("Lorem ipsum")
-                    Text("Lorm ipsum dolor sit amet")
+
+                        .font(
+                            .custom(
+                                "Montserrat-semiBold",
+                                size: 10,
+                                relativeTo: .title2
+                            )
+                        )
+
+                    Spacer()
                 }
+                .padding(.leading)
+                .padding(.top, 5)
+                HStack {
+                    Text("Lorm ipsum dolor sit amet")
+                        .font(
+                            .custom(
+                                "Poppins-Light",
+                                size: 8,
+                                relativeTo: .title2
+                            )
+                        )
+
+                    Spacer()
+
+                }
+                .padding(.leading)
+                .padding(.bottom, number == 3 ? 13 : 0)
+                
+             
             }
+
         }
+
+        .background(
+            RoundedRectangle(cornerRadius: 3)
+                .stroke(
+                    .gray,
+                    lineWidth: 0.5
+                )
+        )
+        .padding()
     }
-    
+
 }
-
-
-
 
 #Preview {
     LSMenu()

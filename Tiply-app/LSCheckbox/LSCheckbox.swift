@@ -1,73 +1,77 @@
+
 import SwiftUI
 
-// Composant radio unique
-struct RadioButton: View {
-    let title: String
-    let isSelected: Bool
-    let action: () -> Void
+struct CheckBoxSingleSelect: View {
+    @Binding var selection: String
     
     var body: some View {
-        Button(action: action) {
+        VStack(alignment: .leading, spacing: 10) {
+            
+            // Option 1
+            checkboxItem(id: "option1", title: "Active")
+            
+            // Option 2
+            checkboxItem(id: "option2", title: "Non-active")
+            
+            
+        }
+        .padding()
+    }
+    
+    private func checkboxItem(id: String, title: String) -> some View {
+        Button(action: {
+            selection = id
+        }) {
             HStack {
-                // Cercle de sélection
+                // Case à cocher
                 ZStack {
-                    Circle()
-                        .stroke(Color(LSColors().LSColorsPrimaryBlue))
+                    RoundedRectangle(cornerRadius: 4)
+                        .fill(
+                            selection == id  ? Color(
+                                LSColors().LSColorsPrimaryBlue
+                            ) : .white
+                        )
+                        .stroke(selection == id ? Color(
+                            LSColors().LSColorsPrimaryBlue
+                        ) : Color.gray, lineWidth: 2)
                         .frame(width: 20, height: 20)
                     
-                    if isSelected {
-                        Circle()
-                            .fill(Color(LSColors().LSColorsPrimaryBlue))
+                    if selection == id {
+                        Image(systemName: "checkmark")
+                            .resizable()
+                            .scaledToFit()
                             .frame(width: 12, height: 12)
+                            .foregroundColor(Color.white)
                     }
                 }
-                
-                // Texte du bouton
                 Text(title)
                     .foregroundColor(.primary)
                 
                 Spacer()
             }
-            .font(
-                .custom(
-                    "Poppins-SemiBold",
-                    size: 10,
-                    relativeTo: .title2
-                )
-            )
         }
         .buttonStyle(PlainButtonStyle())
     }
 }
 
-// Exemple d'utilisation
-struct RadioDemo: View {
+struct CheckBoxesDemo: View {
     @State private var selectedOption = "option1"
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            // Option 1
-            RadioButton(
-                title: "Active",
-                isSelected: selectedOption == "option1",
-                action: { selectedOption = "option1" }
+        CheckBoxSingleSelect(selection: $selectedOption)
+            .font(
+                .custom(
+                    "Montserrat-semiBold",
+                    size: 12,
+                    relativeTo: .title2
+                )
             )
-            
-            // Option 2
-            RadioButton(
-                title: "Non-active",
-                isSelected: selectedOption == "option2",
-                action: { selectedOption = "option2" }
-            )
-            
-           
-        }
-        .padding()
+
     }
 }
 
+
 #Preview {
-    RadioDemo()
+    CheckBoxesDemo()
         .modelContainer(for: Item.self, inMemory: true)
-    
 }

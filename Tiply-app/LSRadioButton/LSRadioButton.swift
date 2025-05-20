@@ -1,107 +1,73 @@
-//
-//  Colors.swift
-//  Tiply-app
-//
-//  Created by Ben moussa on 19/05/2025.
-//
-
 import SwiftUI
 
-struct ImageToggleStyle: ToggleStyle {
-
-    @State var mm: Bool = true
-
-    func makeBody(configuration: Configuration) -> some View {
-
-        Button {
-            withAnimation(.easeInOut(duration: 0.2)) {
-
-                configuration.isOn.toggle()
-
-            }
-
-        } label: {
-            Label {
-                configuration.label
-            } icon: {
-                HStack {
-                    ZStack {
-
-                        if UserDefaults.standard.bool(forKey: "color") {
-
-                            Rectangle()
-                                .fill(.yellow)
-                                .cornerRadius(50)
-                                .frame(width: 70, height: 35)
-                        } else {
-
-                            Rectangle()
-                                .fill(
-                                    configuration.isOn
-                                        ? LinearGradient(
-                                            gradient: Gradient(
-                                                colors: [
-                                                    Color(
-                                                        Color(
-                                                            LSColors().LSColorsGrey
-                                                        )
-                                                    ),
-                                                    Color(
-                                                        Color(
-                                                            LSColors().LSColorsGrey
-                                                        )
-                                                    )
-                                                ]
-                                            ),
-                                            startPoint: .leading,
-                                            endPoint: .trailing
-                                          )
-                                        : LinearGradient(
-                                            gradient: Gradient(
-                                                stops: [
-                                                    .init(color: Color(LSColors().LSColorsBlue), location: 0),
-                                                    .init(color: Color(LSColors().LSColorsPrimaryBlue), location: 0.6)
-                                                ]
-                                            ),
-                                            startPoint: .leading,
-                                            endPoint: .trailing
-                                          )
-                                )
-
-                                .cornerRadius(50)
-                                .frame(width: 70, height: 35)
-
-                        }
-
+// Composant radio unique
+struct RadioButton: View {
+    let title: String
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            HStack {
+                // Cercle de sélection
+                ZStack {
+                    Circle()
+                        .stroke(Color(LSColors().LSColorsPrimaryBlue))
+                        .frame(width: 20, height: 20)
+                    
+                    if isSelected {
                         Circle()
-                            .offset(x: configuration.isOn ? 17 : -17)
-                            .foregroundColor(.white)
-                            .frame(width: 30, height: 30)
-
+                            .fill(Color(LSColors().LSColorsPrimaryBlue))
+                            .frame(width: 12, height: 12)
                     }
                 }
+                
+                // Texte du bouton
+                Text(title)
+                    .foregroundColor(.primary)
+                
+                Spacer()
             }
+            .font(
+                .custom(
+                    "Poppins-SemiBold",
+                    size: 10,
+                    relativeTo: .title2
+                )
+            )
         }
-
         .buttonStyle(PlainButtonStyle())
-
     }
-
 }
 
-public struct LSSwitchButton: View {
-    @State var monToggle: Bool = false
-    public var body: some View {
-
-        Toggle(isOn: $monToggle) {
-
+// Exemple d'utilisation
+struct LSRadioButton: View {
+    @State private var selectedOption = "option1"
+    
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            // Option 1
+            RadioButton(
+                title: "Active",
+                isSelected: selectedOption == "option1",
+                action: { selectedOption = "option1" }
+            )
+            
+            // Option 2
+            RadioButton(
+                title: "Non-active",
+                isSelected: selectedOption == "option2",
+                action: { selectedOption = "option2" }
+            )
+            
+           
         }
-        .toggleStyle(ImageToggleStyle())
-
+        .padding()
     }
 }
 
 #Preview {
-    LSSwitchButton()
+    LSRadioButton()
         .modelContainer(for: Item.self, inMemory: true)
+    
 }

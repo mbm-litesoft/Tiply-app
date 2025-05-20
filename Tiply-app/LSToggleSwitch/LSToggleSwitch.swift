@@ -7,91 +7,98 @@
 
 import SwiftUI
 
-public struct LSAccordion: View {
+struct SwitchToggleStyle: ToggleStyle {
 
-    @State public var degrees: Double = 90
-    @State public var i = 0
-    public var body: some View {
 
-        VStack {
-            ForEach(1...3, id: \.self) { number in
-                if number != 1 {
-                    Rectangle()
-                        .fill( .gray)
-                        .frame(height: 1)
-                        .padding(.horizontal, 7)
-                        .offset(y: 9)
-                }
-                HStack {
-                    Text("Lorem ipsum")
+    func makeBody(configuration: Configuration) -> some View {
 
-                        .font(
-                            .custom(
-                                "Montserrat-semiBold",
-                                size: 10,
-                                relativeTo: .title2
-                            )
-                        )
+        Button {
+            withAnimation(.easeInOut(duration: 0.2)) {
 
-                    Spacer()
-                    Image("Arrow")
-                        .resizable()
-                        .frame(width: 6, height: 9)
-                        .rotationEffect(Angle(degrees: number == i ? degrees : 90))
-                        .padding(.trailing)
-                    
-                }
-                .background(.white)
-                .padding(.leading, 8)
-                .padding(.top, 9)
-                .onTapGesture {
-                    print("gg")
-                    withAnimation(.easeIn(duration: 0.1)) {
-                     
-                    degrees = -90
-                    i = number == i ? 0 : number
-                     
-                    }
-                }
-                HStack{
-                    if (number == i){
-                        HStack {
-                            Text("Lorm ipsum dolor sit amet")
-                                .font(
-                                    .custom(
-                                        "Poppins-Light",
-                                        size: 8,
-                                        relativeTo: .title2
-                                    )
-                                )
-                            
-                            Spacer()
-                        }
-                        
-                        
-                    }
-                }
-                .padding(.leading, 8)
-                .padding(.bottom, number == 3 ? 9 : 0)
-                
-             
+                configuration.isOn.toggle()
+
             }
 
+        } label: {
+            Label {
+                configuration.label
+            } icon: {
+                HStack {
+                    ZStack {
+
+                     
+
+                            Rectangle()
+                                .fill(
+                                    configuration.isOn
+                                        ? LinearGradient(
+                                            gradient: Gradient(
+                                                colors: [
+                                                    Color(
+                                                        Color(
+                                                            LSColors().LSColorsGrey
+                                                        )
+                                                    ),
+                                                    Color(
+                                                        Color(
+                                                            LSColors().LSColorsGrey
+                                                        )
+                                                    )
+                                                ]
+                                            ),
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                          )
+                                        : LinearGradient(
+                                            gradient: Gradient(
+                                                stops: [
+                                                    .init(color: Color(LSColors().LSColorsBlue), location: 0),
+                                                    .init(color: Color(LSColors().LSColorsPrimaryBlue), location: 0.6)
+                                                ]
+                                            ),
+                                            startPoint: .leading,
+                                            endPoint: .trailing
+                                          )
+                                )
+
+                                .cornerRadius(50)
+                                .frame(width: 70, height: 35)
+
+                        
+
+                        Circle()
+                            .offset(x: configuration.isOn ? 17 : -17)
+                            .foregroundColor(.white)
+                            .frame(width: 30, height: 30)
+
+                    }
+                }
+            }
         }
 
-        .background(
-            RoundedRectangle(cornerRadius: 3)
-                .stroke(
-                    .gray,
-                    lineWidth: 0.5
-                )
-        )
-        .padding()
+        .buttonStyle(PlainButtonStyle())
+
+    }
+
+}
+
+
+public struct LSToggleSwitch: View {
+
+    @State var monToggle: Bool = false
+    public var body: some View {
+
+        Toggle(isOn: $monToggle) {
+
+        }
+        .toggleStyle(SwitchToggleStyle())
+
+        
     }
 
 }
 
 #Preview {
-    LSAccordion()
+    LSToggleSwitch()
         .modelContainer(for: Item.self, inMemory: true)
 }

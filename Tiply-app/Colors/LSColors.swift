@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 public struct LSColors {
 
     public let LSColorsWhite = #colorLiteral(
@@ -40,7 +39,7 @@ public struct LSColors {
         blue: 0.4039215686,
         alpha: 1
     )
-    public let LSColorsPrimaryGreen = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+    public let LSColorsPrimaryGreen = #colorLiteral(red: 0.1215686275, green: 0.862745098, blue: 0.662745098, alpha: 1)
     
     public let LSColorsSecondaryGreen = #colorLiteral(
         red: 0.7215686275,
@@ -66,16 +65,16 @@ public struct LSColors {
         blue: 0.9882352941,
         alpha: 1
     )
-    public let LSColorsBlueGradient = #colorLiteral(
-        red: 0,
-        green: 0.8431372549,
-        blue: 0.9921568627,
-        alpha: 1
+   
+    // non identique à la maquette
+    public let LSColorsBlueGradient = LinearGradient(
+        gradient: Gradient(colors: [
+            Color(red: 0/255, green: 215/255, blue: 253/255), // #00D7FD
+            Color(red: 0/255, green: 38/255, blue: 255/255)   // #0026FF
+        ]),
+        startPoint: .leading,
+        endPoint: .trailing
     )
-    public let LSColorsBlueGradient2 = #colorLiteral(
-        red: 0,
-        green: 0.1490196078,
-        blue: 1,
-        alpha: 1
-    )
+
+
 }

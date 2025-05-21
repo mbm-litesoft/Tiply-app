@@ -8,7 +8,7 @@
 import SwiftUI
 
 public struct LSCounterHorizontal: View {
-
+   @State public var counter : Int
     public var type : Int
     
     public var body: some View {
@@ -24,10 +24,14 @@ public struct LSCounterHorizontal: View {
                     })
                     .cornerRadius(5, corners: [.topLeft, .bottomLeft])
                     .frame(width: 25, height: 25)
-                
+                    .onTapGesture {
+                        if counter > 0 {
+                            counter -= 1
+                        }
+                    }
                 Spacer()
                 HStack {
-                    Text("00")
+                    Text("\(counter)")
                     + Text(" unité")
                 }
                 .font(.custom("Montserrat-SemiBold", size: 10, relativeTo: .title2))
@@ -43,7 +47,9 @@ public struct LSCounterHorizontal: View {
                     })
                     .cornerRadius(5, corners: [.topRight, .bottomRight])
                     .frame(width: 25, height: 25)
-                
+                    .onTapGesture {
+                        counter += 1
+                    }
                 
             }
             .frame(width: 110, height: 25)
@@ -60,6 +66,7 @@ public struct LSCounterHorizontal: View {
                         .foregroundStyle(.white)
                 })
                 .cornerRadius(5, corners: [.topLeft, .bottomLeft])
+            
             Rectangle()
                 .fill(Color(LSColors().LSColorsSecondaryBlue))
                 .overlay(content: {
@@ -79,6 +86,6 @@ public struct LSCounterHorizontal: View {
 }
 
 #Preview {
-    LSCounterHorizontal(type: 1)
+    LSCounterHorizontal(counter: 0 ,type: 1)
         .modelContainer(for: Item.self, inMemory: true)
 }

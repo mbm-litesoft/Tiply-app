@@ -25,9 +25,6 @@ struct SwitchToggleStyle: ToggleStyle {
             } icon: {
                 HStack {
                     ZStack {
-
-                     
-
                             Rectangle()
                                 .fill(
                                     configuration.isOn

@@ -2,23 +2,18 @@
 import SwiftUI
 
 struct CheckBoxSingleSelect: View {
-    @Binding var selection: String
-    
+    @Binding var selection: Int
+    public var items: [String]
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            
-            // Option 1
-            checkboxItem(id: "option1", title: "Active")
-            
-            // Option 2
-            checkboxItem(id: "option2", title: "Non-active")
-            
-            
+            ForEach(Array(items.enumerated()), id: \.0) { index, item in
+                checkboxItem(id: index, title: item)
+            }
         }
         .padding()
     }
     
-    private func checkboxItem(id: String, title: String) -> some View {
+    private func checkboxItem(id: Int, title: String) -> some View {
         Button(action: {
             selection = id
         }) {
@@ -55,10 +50,10 @@ struct CheckBoxSingleSelect: View {
 }
 
 struct CheckBoxesDemo: View {
-    @State private var selectedOption = "option1"
-    
+    @State private var selectedOption = 0
+    public var items: [String] = []
     var body: some View {
-        CheckBoxSingleSelect(selection: $selectedOption)
+        CheckBoxSingleSelect(selection: $selectedOption, items: items)
             .font(
                 .custom(
                     "Montserrat-semiBold",
@@ -72,6 +67,6 @@ struct CheckBoxesDemo: View {
 
 
 #Preview {
-    CheckBoxesDemo()
+    CheckBoxesDemo(items: ["item1", "item2"])
         .modelContainer(for: Item.self, inMemory: true)
 }

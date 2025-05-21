@@ -8,23 +8,26 @@
 import SwiftUI
 
 public struct LSAccordion: View {
-
+    public var items: [String: String]
     @State public var degrees: Double = 90
-    @State public var i = 0
+    @State public var i = -1
+    
     public var body: some View {
 
         VStack {
-            ForEach(1...3, id: \.self) { number in
-                if number != 1 {
+            ForEach(
+                Array(items.enumerated()),
+                id: \.0
+            ) { index, item in
+                if index != 0 {
                     Rectangle()
-                        .fill( .gray)
+                        .fill(.gray)
                         .frame(height: 1)
                         .padding(.horizontal, 7)
                         .offset(y: 9)
                 }
                 HStack {
-                    Text("Lorem ipsum")
-
+                    Text("\(item.key)")
                         .font(
                             .custom(
                                 "Montserrat-semiBold",
@@ -32,14 +35,14 @@ public struct LSAccordion: View {
                                 relativeTo: .title2
                             )
                         )
-
                     Spacer()
                     Image("Arrow")
                         .resizable()
                         .frame(width: 6, height: 9)
-                        .rotationEffect(Angle(degrees: number == i ? degrees : 90))
+                        .rotationEffect(
+                            Angle(degrees: index == i ? degrees : 90)
+                        )
                         .padding(.trailing)
-                    
                 }
                 .background(.white)
                 .padding(.leading, 8)
@@ -47,16 +50,14 @@ public struct LSAccordion: View {
                 .onTapGesture {
                     print("gg")
                     withAnimation(.easeIn(duration: 0.1)) {
-                     
-                    degrees = -90
-                    i = number == i ? 0 : number
-                     
+                        degrees = -90
+                        i = index == i ? -1 : index
                     }
                 }
-                HStack{
-                    if (number == i){
+                HStack {
+                    if index == i {
                         HStack {
-                            Text("Lorm ipsum dolor sit amet")
+                            Text("\(item.value)")
                                 .font(
                                     .custom(
                                         "Poppins-Light",
@@ -64,21 +65,14 @@ public struct LSAccordion: View {
                                         relativeTo: .title2
                                     )
                                 )
-                            
                             Spacer()
                         }
-                        
-                        
                     }
                 }
                 .padding(.leading, 8)
-                .padding(.bottom, number == 3 ? 9 : 0)
-                
-             
+                .padding(.bottom, index == items.count - 1 ? 10 : 0)
             }
-
         }
-
         .background(
             RoundedRectangle(cornerRadius: 3)
                 .stroke(
@@ -88,10 +82,9 @@ public struct LSAccordion: View {
         )
         .padding()
     }
-
 }
 
 #Preview {
-    LSAccordion()
+    LSAccordion(items: ["Apple": "Banana", "Orange": "Coconut"])
         .modelContainer(for: Item.self, inMemory: true)
 }

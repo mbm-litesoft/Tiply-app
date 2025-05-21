@@ -8,17 +8,19 @@
 import SwiftUI
 
 public struct LSDropdown: View {
-
+    public var items: [String: String]
     @State public var degrees: Double = 90
-    @State public var i = 0
+    @State public var i = -1
     public var body: some View {
 
         VStack {
-            ForEach(1...3, id: \.self) { number in
-                VStack{
+            ForEach(
+                Array(items.enumerated()),
+                id: \.0
+            ) { index, item in
+                VStack {
                     HStack {
-                        Text("Lorem ipsum")
-                        
+                        Text("\(item.key)")
                             .font(
                                 .custom(
                                     "Montserrat-semiBold",
@@ -26,37 +28,30 @@ public struct LSDropdown: View {
                                     relativeTo: .title2
                                 )
                             )
-                        
                         Spacer()
                         Image("Arrow")
                             .resizable()
                             .frame(width: 6, height: 9)
-                            .rotationEffect(Angle(degrees: number == i ? degrees : 90))
-                        
-                        
+                            .rotationEffect(
+                                Angle(degrees: index == i ? degrees : 90)
+                            )
                     }
                     .background(.white)
-                    
                     .onTapGesture {
-                        print("gg")
                         withAnimation(.easeIn(duration: 0.1)) {
-                            
                             degrees = -90
-                            i = number == i ? 0 : number
-                            
+                            i = index == i ? -1 : index
                         }
                     }
-                    HStack{
-                        if (number == i){
-                            VStack{
+                    HStack {
+                        if index == i {
+                            VStack {
                                 Rectangle()
-                                    .fill( .gray)
+                                    .fill(.gray)
                                     .frame(height: 1)
-                                   
-                                
-                                
+
                                 HStack {
-                                    Text("Lorm ipsum dolor sit amet")
+                                    Text("\(item.value)")
                                         .font(
                                             .custom(
                                                 "Poppins-Light",
@@ -64,7 +59,7 @@ public struct LSDropdown: View {
                                                 relativeTo: .title2
                                             )
                                         )
-                                    
+
                                     Spacer()
                                 }
                                 .padding(.top, 1)
@@ -81,16 +76,12 @@ public struct LSDropdown: View {
                         lineWidth: 0.5
                     )
             )
-            
-            
         }
-        
         .padding()
-       
     }
 }
 
 #Preview {
-    LSDropdown()
+    LSDropdown(items: ["Apple": "Banana", "Orange": "Coconut"])
         .modelContainer(for: Item.self, inMemory: true)
 }

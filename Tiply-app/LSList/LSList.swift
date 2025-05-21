@@ -8,14 +8,14 @@
 import SwiftUI
 
 public struct LSList: View {
-
+    public var items: [String]
     public var body: some View {
 
         VStack {
-            ForEach(1...3, id: \.self) { number in
+            ForEach(Array(items.enumerated()), id: \.0) { index, item in
                 
                     Rectangle()
-                    .fill(number == 1 ? .clear : .gray)
+                    .fill(index == 0 ? .clear : .gray)
                         .frame(height: 1)
                         .padding(.horizontal, 8)
                         .offset(y: 3)
@@ -32,7 +32,7 @@ public struct LSList: View {
                                 .scaledToFit()
                                 .foregroundStyle(.white)
                         }
-                        .padding(.bottom, number == 3 ? 13 : 0)
+                        .padding(.bottom, index == items.count - 1 ? 13 : 0)
                         .offset(x: 10, y: 2)
                        
                     
@@ -56,7 +56,7 @@ public struct LSList: View {
                         }
                         .padding(.leading)
                         .padding(.top, 5)
-                        .padding(.bottom, number == 3 ? 13 : 0)
+                        .padding(.bottom, index == items.count - 1 ? 13 : 0)
                     }
                     .offset(x: -5)
                 }
@@ -77,6 +77,6 @@ public struct LSList: View {
 }
 
 #Preview {
-    LSList()
+    LSList(items: ["Lorem", "Ipsum"])
         .modelContainer(for: Item.self, inMemory: true)
 }

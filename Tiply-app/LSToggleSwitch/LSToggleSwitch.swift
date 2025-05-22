@@ -9,16 +9,12 @@ import SwiftUI
 
 struct SwitchToggleStyle: ToggleStyle {
 
-
     func makeBody(configuration: Configuration) -> some View {
 
         Button {
             withAnimation(.easeInOut(duration: 0.2)) {
-
                 configuration.isOn.toggle()
-
             }
-
         } label: {
             Label {
                 configuration.label
@@ -27,7 +23,7 @@ struct SwitchToggleStyle: ToggleStyle {
                     ZStack {
                             Rectangle()
                                 .fill(
-                                    configuration.isOn
+                                    !configuration.isOn
                                         ? LinearGradient(
                                             gradient: Gradient(
                                                 colors: [
@@ -57,45 +53,32 @@ struct SwitchToggleStyle: ToggleStyle {
                                             endPoint: .trailing
                                           )
                                 )
-
                                 .cornerRadius(50)
                                 .frame(width: 70, height: 35)
-
-                        
-
                         Circle()
-                            .offset(x: configuration.isOn ? 17 : -17)
+                            .offset(x: !configuration.isOn ? 17 : -17)
                             .foregroundColor(.white)
                             .frame(width: 30, height: 30)
-
                     }
                 }
             }
         }
-
         .buttonStyle(PlainButtonStyle())
-
     }
-
 }
 
 
 public struct LSToggleSwitch: View {
-
-    @State var monToggle: Bool = false
+    @State public var toggleStatus: Bool
+    
     public var body: some View {
-
-        Toggle(isOn: $monToggle) {
-
+        Toggle(isOn: $toggleStatus) {
         }
         .toggleStyle(SwitchToggleStyle())
-
-        
     }
-
 }
 
 #Preview {
-    LSToggleSwitch()
+    LSToggleSwitch(toggleStatus: false)
         .modelContainer(for: Item.self, inMemory: true)
 }

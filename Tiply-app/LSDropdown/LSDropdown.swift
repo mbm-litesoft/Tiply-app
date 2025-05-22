@@ -14,10 +14,7 @@ public struct LSDropdown: View {
     public var body: some View {
 
         VStack {
-            ForEach(
-                Array(items.enumerated()),
-                id: \.0
-            ) { index, item in
+            ForEach(Array(items.sorted(by: { $0.key < $1.key }).enumerated()), id: \.offset) { index, item in
                 VStack {
                     HStack {
                         Text("\(item.key)")

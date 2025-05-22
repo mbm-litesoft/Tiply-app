@@ -10,11 +10,12 @@ import SwiftUI
 
 public struct LSPrimarySearchbar: View {
 
+    @State public var textInput: String = ""
     
     public var body: some View {
       
         HStack{
-            Text("Rechercher...")
+            TextField("Rechercher...", text: $textInput)
                 .padding(10)
             Spacer()
         }
@@ -24,6 +25,22 @@ public struct LSPrimarySearchbar: View {
             RoundedRectangle(cornerRadius: 30)
                 .stroke(Color.black, lineWidth: 0.5)
                 .fill(.white)
+           
+        )
+        .overlay(
+            HStack{
+                Spacer()
+                Image(systemName: "xmark")
+                    .resizable()
+                    .frame(width: 10, height: 10)
+                    .foregroundStyle(Color(LSColors().LSColorsPrimaryBlue))
+                    .padding(.trailing,9)
+                    .onTapGesture {
+                        textInput = ""
+                    }
+            }
+            
+          
         )
         .padding()
         

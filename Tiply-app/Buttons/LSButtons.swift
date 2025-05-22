@@ -8,13 +8,13 @@ import SwiftUI
 
 public struct LSPrimaryRoundButton: View {
     
-    public var buttonText: String
+    public var buttonLabel: String
     public var buttonColor: Color
     public var isBlue: Bool
     
     public var body: some View {
 
-        Text(buttonText)
+        Text(buttonLabel)
             .font(.custom("Montserrat-Bold", size: 8, relativeTo: .title2))
             .foregroundColor(isBlue ? .white : .black)
             .padding()
@@ -29,13 +29,13 @@ public struct LSPrimaryRoundButton: View {
 
 public struct LSPrimaryButton: View {
     
-    public var buttonText: String
+    public var buttonLabel: String
     public var buttonColor: Color
     public var isBlue: Bool
     
     public var body: some View {
 
-        Text(buttonText)
+        Text(buttonLabel)
             .font(.custom("Montserrat-Bold", size: 8, relativeTo: .title2))
             .foregroundColor(isBlue ? .white : .black)
             .padding()
@@ -50,12 +50,12 @@ public struct LSPrimaryButton: View {
 
 public struct LSSecondaryButton: View {
 
-    public var buttonText: String
+    public var buttonLabel: String
     public var buttonColor: Color
 
     public var body: some View {
 
-        Text(buttonText)
+        Text(buttonLabel)
             .font(.custom("Montserrat-Bold", size: 8, relativeTo: .title2))
             .foregroundColor(Color(LSColors().LSColorsPrimaryBlue), )
             .padding()
@@ -72,11 +72,11 @@ public struct LSSecondaryButton: View {
 
 public struct LSSecondaryRoundButton: View {
 
-    public var buttonText: String
+    public var buttonLabel: String
     public var buttonColor: Color
 
     public var body: some View {
-        Text(buttonText)
+        Text(buttonLabel)
             .font(.custom("Montserrat-Bold", size: 8, relativeTo: .title2))
             .foregroundColor(Color(LSColors().LSColorsPrimaryBlue), )
             .padding()
@@ -89,4 +89,26 @@ public struct LSSecondaryRoundButton: View {
                     )
             )
     }
+}
+
+
+#Preview {
+    LSPrimaryRoundButton(
+        buttonLabel: "Valider",
+        buttonColor: Color(LSColors().LSColorsPrimaryBlue),
+        isBlue: true
+    )
+    LSPrimaryButton(
+        buttonLabel: "Valider",
+        buttonColor: Color(LSColors().LSColorsPrimaryBlue),
+        isBlue: true
+    )
+    LSSecondaryButton(
+        buttonLabel: "Valider",
+        buttonColor: Color(LSColors().LSColorsPrimaryBlue)
+    )
+    LSSecondaryRoundButton(
+        buttonLabel: "Valider",
+        buttonColor: Color(LSColors().LSColorsPrimaryBlue)
+    )
 }

@@ -10,19 +10,24 @@ import SwiftUI
 
 public struct LSPagination: View {
 
-    public var count = 100
+    public var numberOfPages: Int
+    
  @State public var id = 1
     public var body: some View {
         HStack{
-            
-            Image("Arrow")
-            Text("Page précédente")
+            HStack{
+                Image("Arrow")
+                Text("Page précédente")
+            }
+            .onTapGesture {
+                if id > 1 {
+                    id -= 1
+                }
+            }
             Spacer()
             HStack(){
-                
-                if count > 7 {
-                    
-                    ForEach(1...3, id: \.self){ number in
+                if numberOfPages > 7 {
+                    ForEach(1...numberOfPages, id: \.self){ number in
                         Spacer()
                         Text("\(number)")
                             .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
@@ -31,7 +36,6 @@ public struct LSPagination: View {
                                     Circle()
                                         .fill(Color(LSColors().LSColorsPrimaryBlue))
                                         .frame(width: 20, height: 20)
-                                       
                                 }
                             }
                             .onTapGesture {
@@ -43,7 +47,7 @@ public struct LSPagination: View {
                     Text("...")
                         .foregroundStyle(Color(LSColors().LSColorsPrimaryBlue))
                     Spacer()
-                    ForEach((count - 2)...count, id: \.self){ number in
+                    ForEach((numberOfPages - 2)...numberOfPages, id: \.self){ number in
                         Spacer()
                         Text("\(number)")
                             .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
@@ -52,18 +56,15 @@ public struct LSPagination: View {
                                     Circle()
                                         .fill(Color(LSColors().LSColorsPrimaryBlue))
                                         .frame(width: 20, height: 20)
-                                       
                                 }
                             }
                             .onTapGesture {
-                                print(number,"nm")
                                 id = number
                             }
                         Spacer()
                     }
                 }else{
-                    
-                    ForEach(1...count, id: \.self){ number in
+                    ForEach(1...numberOfPages, id: \.self){ number in
                         Spacer()
                         Text("\(number)")
                             .foregroundStyle(id == number ? .white : Color(LSColors().LSColorsPrimaryBlue))
@@ -76,7 +77,6 @@ public struct LSPagination: View {
                                             )
                                         )
                                         .frame(width: 20, height: 20)
-                                       
                                 }
                             }
                             .onTapGesture {
@@ -86,11 +86,17 @@ public struct LSPagination: View {
                     }
                 }
             }
-           
             Spacer()
-            Text("Page suivante")
-            Image("Arrow")
-                .rotationEffect(Angle(degrees: 180))
+            HStack{
+                Text("Page suivante")
+                Image("Arrow")
+                    .rotationEffect(Angle(degrees: 180))
+            }
+            .onTapGesture {
+                if id < numberOfPages {
+                    id += 1
+                }
+            }
         }
         .padding(.horizontal, 30)
         .font(
@@ -101,13 +107,12 @@ public struct LSPagination: View {
             )
         )
     }
-    
 }
 
 
 
 
 #Preview {
-    LSPagination()
+    LSPagination(numberOfPages: 5)
         .modelContainer(for: Item.self, inMemory: true)
 }

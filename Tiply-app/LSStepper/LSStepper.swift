@@ -8,12 +8,14 @@
 import SwiftUI
 
 public struct LSStepper: View {
-
+    
+    public var titleOfState : String
+    public var actualState : Int
+    public var numberOfState : Int
     public var body: some View {
 
         VStack (alignment: .leading){
-            
-            Text("Etape 3 sur 4")
+            Text("Etape \(actualState) sur \(numberOfState)")
                 .font(
                     .custom(
                         "Poppins-Light",
@@ -21,7 +23,7 @@ public struct LSStepper: View {
                         relativeTo: .title2
                     )
                 )
-            Text("Titre de l'étape")
+            Text("\(titleOfState)")
                 .font(
                     .custom(
                         "Montserrat-Bold",
@@ -30,10 +32,10 @@ public struct LSStepper: View {
                     )
                 )
             HStack(spacing: 5){
-                ForEach(0..<4) { index in
+                ForEach(0..<numberOfState, id: \.self) { index in
                     RoundedRectangle(cornerRadius: 3)
                         .fill(
-                            index < 3 ? Color(LSColors().LSColorsPrimaryBlue) : Color(
+                            index < actualState ? Color(LSColors().LSColorsPrimaryBlue) : Color(
                                 LSColors().LSColorsSecondaryBlue
                             )
                         )
@@ -42,10 +44,9 @@ public struct LSStepper: View {
         }
         .padding(.horizontal,20)
     }
-
 }
 
 #Preview {
-    LSStepper()
+    LSStepper(titleOfState: "Achat" ,actualState: 3 , numberOfState: 5)
         .modelContainer(for: Item.self, inMemory: true)
 }

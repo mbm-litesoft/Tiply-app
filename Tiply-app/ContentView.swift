@@ -32,18 +32,37 @@ struct RoundedCorner: Shape {
 
 
 struct ContentView: View {
-
-
     public var body: some View {
-        LSModal(
-            modalTitle: "Lorem Ipsum",
-            modalText: "Lorm ipsum dolor sit amet, consectetur adipiscing elit.Phasellus suscipit purus eget", type: 3
-        )
+        Text("Upload avec formats personnalisés")
+            .font(.headline)
+        LSUploadMini(
+            allowedExtensions: ["jpg", "png", "gif"],
+            maxFileSize: 5 * 1024 * 1024 // 5MB
+        ) { url in
+            print("Fichier sélectionné: \(url.lastPathComponent)")
+        } onFileRemoved: {
+            print("Fichier supprimé")
+        }
+        
+        Divider()
+        
+        Text("Upload images uniquement")
+            .font(.headline)
+        
+        // Exemple pour images uniquement
+        LSUploadMini.imagesOnly { url in
+            print("Image sélectionnée: \(url.lastPathComponent)")
+        }
+        
+        Divider()
+        
+        Text("Upload documents uniquement")
+            .font(.headline)
+        
+        // Exemple pour documents uniquement
+        LSUploadMini.documentsOnly { url in
+            print("Document sélectionné: \(url.lastPathComponent)")
+        }
     }
-
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}

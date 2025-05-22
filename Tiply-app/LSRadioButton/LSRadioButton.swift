@@ -2,6 +2,7 @@ import SwiftUI
 
 // Composant radio unique
 struct RadioButton: View {
+    
     let title: String
     let isSelected: Bool
     let action: () -> Void
@@ -42,23 +43,20 @@ struct RadioButton: View {
 
 // Exemple d'utilisation
 struct LSRadioButton: View {
-    @State private var selectedOption = "option1"
+    public var items: [String]
+    @State private var selectedOption = 0
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            // Option 1
-            RadioButton(
-                title: "Active",
-                isSelected: selectedOption == "option1",
-                action: { selectedOption = "option1" }
-            )
-            
-            // Option 2
-            RadioButton(
-                title: "Non-active",
-                isSelected: selectedOption == "option2",
-                action: { selectedOption = "option2" }
-            )
+            ForEach(Array(items.enumerated()), id: \.0) { index, item in
+                // Option 1
+                RadioButton(
+                    title: item,
+                    isSelected: selectedOption == index,
+                    action: { selectedOption = index }
+                )
+            }
+        
             
            
         }
@@ -67,7 +65,7 @@ struct LSRadioButton: View {
 }
 
 #Preview {
-    LSRadioButton()
+    LSRadioButton(items: ["Coca", "Cola"])
         .modelContainer(for: Item.self, inMemory: true)
     
 }

@@ -10,7 +10,8 @@ import SwiftUI
 
 public struct LSTextInput: View {
 
-    @State public var textInput: String = "Dauphin"
+    @State public var textInput: String
+    public var providedRegex: String
     @State public var offsets: [CGFloat] = [25, 0]
     @State public var fontSize: CGFloat = 9
     @FocusState public var isFocused: Bool
@@ -51,10 +52,10 @@ public struct LSTextInput: View {
                     .onChange(of: textInput, { oldValue, newValue in
                       
                         if textInput.count > 0 {
-                            let emailRegex = #"^[A-Za-z]{1,}$"#
+                            
                             
                             do {
-                                let regex = try NSRegularExpression(pattern: emailRegex)
+                                let regex = try NSRegularExpression(pattern: providedRegex)
                                 let range = NSRange(textInput.startIndex..<textInput.endIndex, in: textInput)
                                 
                                 if regex.firstMatch(in: textInput, options: [], range: range) != nil {
@@ -100,6 +101,6 @@ public struct LSTextInput: View {
 }
 
 #Preview {
-    LSTextInput()
+    LSTextInput(textInput: "Dauphin", providedRegex: #"^[A-Za-z]{1,}$"#)
         .modelContainer(for: Item.self, inMemory: true)
 }

@@ -9,19 +9,18 @@ import SwiftUI
 
 public struct LSMenuPicto: View {
 
+    public var items: [String : String]
+    
     public var body: some View {
 
         VStack {
-            ForEach(1...3, id: \.self) { number in
-                
+            ForEach(Array(items.sorted(by: { $0.key < $1.key }).enumerated()), id: \.offset) { index, item in
                     Rectangle()
-                    .fill(number == 1 ? .clear : .gray)
+                    .fill(index == 0 ? .clear : .gray)
                         .frame(height: 1)
                         .padding(.horizontal)
                         .offset(y: 3)
-                
                 HStack{
-                  
                     Circle()
                         .fill(Color(LSColors().LSColorsPrimaryBlue))
                         .frame(width: 11, height: 11)
@@ -32,16 +31,11 @@ public struct LSMenuPicto: View {
                                 .scaledToFit()
                                 .foregroundStyle(.white)
                         }
-                        .padding(.bottom, number == 3 ? 13 : 0)
+                        .padding(.bottom, index == items.count - 1 ? 13 : 0)
                         .offset(x: 10, y: 2)
                     VStack{
                         HStack {
-                            
-                            
-                            
-                            
-                            Text("Lorem ipsum")
-                            
+                            Text("\(item.key)")
                                 .font(
                                     .custom(
                                         "Montserrat-semiBold",
@@ -49,13 +43,12 @@ public struct LSMenuPicto: View {
                                         relativeTo: .title2
                                     )
                                 )
-                            
                             Spacer()
                         }
                         .padding(.leading)
                         .padding(.top, 5)
                         HStack {
-                            Text("Lorm ipsum dolor sit amet")
+                            Text("\(item.value)")
                                 .font(
                                     .custom(
                                         "Poppins-Light",
@@ -63,19 +56,15 @@ public struct LSMenuPicto: View {
                                         relativeTo: .title2
                                     )
                                 )
-                            
                             Spacer()
-                            
                         }
                         .padding(.leading)
-                        .padding(.bottom, number == 3 ? 13 : 0)
+                        .padding(.bottom,index == items.count - 1 ? 13 : 0)
                     }
                     .offset(x: -5)
                 }
             }
-
         }
-
         .background(
             RoundedRectangle(cornerRadius: 3)
                 .stroke(
@@ -85,10 +74,9 @@ public struct LSMenuPicto: View {
         )
         .padding()
     }
-
 }
 
 #Preview {
-    LSMenuPicto()
+    LSMenuPicto(items: ["Lorem":"Ipsum", "Lorem2":"Ipsum"])
         .modelContainer(for: Item.self, inMemory: true)
 }

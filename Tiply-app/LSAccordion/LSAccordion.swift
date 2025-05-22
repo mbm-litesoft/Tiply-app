@@ -48,7 +48,6 @@ public struct LSAccordion: View {
                 .padding(.leading, 8)
                 .padding(.top, 9)
                 .onTapGesture {
-                    print("gg")
                     withAnimation(.easeIn(duration: 0.1)) {
                         degrees = -90
                         i = index == i ? -1 : index

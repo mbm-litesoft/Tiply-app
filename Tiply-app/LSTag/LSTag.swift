@@ -11,10 +11,11 @@ import SwiftUI
 public struct LSTag: View {
 
     public var type: Int
+    public var title: String
     @State var buttonColor: Color =  Color(LSColors().LSColorsPrimaryBlue)
     public var body: some View {
         
-        Text("Tag")
+        Text("\(title)")
             .font(.custom("Montserrat-SemiBold", size: 10, relativeTo: .title2))
             .foregroundStyle(
                 type != 1 ? Color(LSColors().LSColorsPrimaryBlue ) : .white
@@ -43,6 +44,6 @@ public struct LSTag: View {
 }
 
 #Preview {
-    LSTag(type: 3)
+    LSTag(type: 3, title: "Tag")
         .modelContainer(for: Item.self, inMemory: true)
 }

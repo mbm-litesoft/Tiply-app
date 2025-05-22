@@ -14,7 +14,7 @@ public struct LSConnect: View {
     public var body: some View {
         VStack{
             LSPrimaryButton(
-                buttonText: "Continuer",
+                buttonLabel: "Continuer",
                 buttonColor: Color(LSColors().LSColorsPrimaryBlue),
                 isBlue: true
             )

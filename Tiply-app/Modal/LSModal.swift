@@ -13,18 +13,14 @@ public struct LSModal: View {
     public var modalTitle: String
     public var modalText: String
     public var type: Int
+    public var buttonLabel: String
 
     public var body: some View {
         VStack {
             HStack {
-                
                 if type == 1 {
-                    
-                    
-                    
                     Spacer()
                     Button {
-                        
                     } label: {
                         
                         ZStack {
@@ -47,15 +43,11 @@ public struct LSModal: View {
                         }
                         .frame(width: 22, height: 22)
                     }
-                
-                
                 }
         }
-
             VStack {
-
                 Text(
-                    "Lorem ipsum"
+                    "\(modalTitle)"
                 )
                 .font(
                     .custom(
@@ -65,22 +57,20 @@ public struct LSModal: View {
                     )
                 )
                 Text(
-                    "Lorm ipsum dolor sit amet, consectetur adipiscing elit. Phasellus suscipit purus eget"
+                    "\(modalText)"
                 )
                 .frame(width: 160)
                 .padding(.vertical, 1)
                 .font(
                     .custom("Poppins-Light", size: 10, relativeTo: .title2)
                 )
-
                 LSPrimaryRoundButton(
-                    buttonText: "Valider",
+                    buttonLabel: buttonLabel,
                     buttonColor: Color(LSColors().LSColorsPrimaryBlue),
                     isBlue: true
                 )
                     .padding(.top)
                     .padding(.bottom, 7)
-
             }
             .multilineTextAlignment(
                 .center
@@ -91,15 +81,10 @@ public struct LSModal: View {
         .background(Color.white)
         .cornerRadius(7)
         .shadow(color: .gray.opacity(0.4), radius: 3, x: 0, y: 0)
-        
         .overlay {
-           
             if type != 1 {
-                
                 Button {
-                    
                 } label: {
-                    
                     ZStack {
                         Circle()
                             .fill(
@@ -117,22 +102,20 @@ public struct LSModal: View {
                         .foregroundColor(
                             .white
                         )
-                        
                     }
                     .frame(width: 50, height: 50)
                     .offset(y: -85)
                 }
             }
-                
-                
-                
-         
         }
-
     }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+    LSModal(
+        modalTitle: "Lorem Ipsum",
+        modalText: "Lorm ipsum dolor sit amet, consectetur adipiscing elit.Phasellus suscipit purus eget",
+        type: 3,
+        buttonLabel: "Valider"
+    )
 }

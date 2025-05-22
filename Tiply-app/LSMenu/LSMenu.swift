@@ -8,21 +8,20 @@
 import SwiftUI
 
 public struct LSMenu: View {
-
+    
+    public var items: [String : String]
+    
     public var body: some View {
 
         VStack {
-            ForEach(1...3, id: \.self) { number in
-                
+            ForEach(Array(items.sorted(by: { $0.key < $1.key }).enumerated()), id: \.offset) { index, item in
                     Rectangle()
-                    .fill(number == 1 ? .clear : .gray)
+                    .fill(index == 0 ? .clear : .gray)
                         .frame(height: 1)
                         .padding(.horizontal)
                         .offset(y: 3)
-                
                 HStack {
-                    Text("Lorem ipsum")
-
+                    Text("\(item.key)")
                         .font(
                             .custom(
                                 "Montserrat-semiBold",
@@ -30,13 +29,12 @@ public struct LSMenu: View {
                                 relativeTo: .title2
                             )
                         )
-
                     Spacer()
                 }
                 .padding(.leading)
                 .padding(.top, 5)
                 HStack {
-                    Text("Lorm ipsum dolor sit amet")
+                    Text("\(item.value)")
                         .font(
                             .custom(
                                 "Poppins-Light",
@@ -46,16 +44,11 @@ public struct LSMenu: View {
                         )
 
                     Spacer()
-
                 }
                 .padding(.leading)
-                .padding(.bottom, number == 3 ? 13 : 0)
-                
-             
+                .padding(.bottom, index == items.count - 1 ? 13 : 0)
             }
-
         }
-
         .background(
             RoundedRectangle(cornerRadius: 3)
                 .stroke(
@@ -65,10 +58,9 @@ public struct LSMenu: View {
         )
         .padding()
     }
-
 }
 
 #Preview {
-    LSMenu()
+    LSMenu(items: ["Lorem":"Ipsum", "Lorem2":"Ipsum"])
         .modelContainer(for: Item.self, inMemory: true)
 }
